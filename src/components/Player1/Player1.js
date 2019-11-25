@@ -9,13 +9,20 @@ class Player1 extends Component {
     state = {
       summonername: '',
       server: '',
-      gamemode: '',
     };
-    handleChange = (e) => {
-    }
-    handleSubmit = (e) => {
-      e.preventDefault();
-    }
+    handleChange = e => {
+        this.setState({ [e.target.name]: e.target.value });
+      };
+      
+    handleSubmit(event) {
+        event.preventDefault();
+        const data = new FormData(event.target);
+        
+        fetch('/api/form-submit-url', {
+          method: 'POST',
+          body: data,
+        });
+      }
     
 
     render() {
@@ -25,7 +32,7 @@ class Player1 extends Component {
           <form className="form-horizontal" onSubmit={this.handleSubmit} >
             <div className="form-group">
               <div className="col-sm-12">
-                <input type="text" className="form-control" placeholder="Summoner Name" value={this.state.summonername} name="Summoner Name" onChange={this.handleChange} />
+                <input type="text" className="form-control" placeholder="Summoner Name" value={this.state.summonername} name="SummonerName" onChange={this.handleChange} />
               </div>
             </div>
             <div className="form-group">

@@ -4,8 +4,10 @@ import Player1 from '../../components/Player1/Player1'
 import Player2 from '../../components/Player2/Player2.js'
 import './MainPage.css';
 
+// eslint-disable-next-line 
 var riotURL = 'https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/doublelift?api_key='+process.env.REACT_APP_RIOT_API_KEY;
 
+// eslint-disable-next-line 
 var mmrURL = 'https://na.whatismymmr.com/api/v1/summoner?name=';
 
 class MainPage extends Component {
