@@ -10,9 +10,11 @@ class Player1 extends Component {
       summonername: '',
       server: '',
     };
-    handleChange = e => {
-        this.setState({ [e.target.name]: e.target.value });
-      };
+    handleChange = (e) => {
+        this.setState({
+          [e.target.name]: e.target.value
+        });
+      }
       
     handleSubmit(event) {
         event.preventDefault();
@@ -32,7 +34,7 @@ class Player1 extends Component {
           <form className="form-horizontal" onSubmit={this.handleSubmit} >
             <div className="form-group">
               <div className="col-sm-12">
-                <input type="text" className="form-control" placeholder="Summoner Name" value={this.state.summonername} name="SummonerName" onChange={this.handleChange} />
+                <input type="text" className="form-control" placeholder="Summoner Name" name="SummonerName" onChange={this.handleChange} />
               </div>
             </div>
             <div className="form-group">
