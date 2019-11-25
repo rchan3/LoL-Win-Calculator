@@ -1,4 +1,5 @@
 const BASE_URL = '/api/users/';
+
 function signup(user) {
   return fetch(BASE_URL + 'signup', {
     method: 'POST',
@@ -6,6 +7,7 @@ function signup(user) {
     body: JSON.stringify(user)
   })
   .then(res => {
+    console.log(res);
     if (res.ok) return res.json();
     // Probably a duplicate email
     throw new Error('Email already taken!');
