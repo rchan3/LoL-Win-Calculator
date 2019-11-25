@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './LoginPage.css';
+
 class LoginPage extends Component {
+
   state = {
     email: '',
     pw: ''
   };
+
   handleChange = (e) => {
     // TODO: implement in an elegant way
   }
+
   handleSubmit = (e) => {
     e.preventDefault();
   }
+
   render() {
     return (
       <div className="LoginPage">
