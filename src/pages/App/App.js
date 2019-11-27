@@ -41,7 +41,11 @@ class App extends Component {
         </header>
         <h1>1v1APP</h1>
         <Switch>
-          <Route exact path="/" render={() => <MainPage />} />
+          <Route
+            exact
+            path="/"
+            render={() => <MainPage user={this.state.user} />}
+          />
           <Route
             exact
             path="/signup"
@@ -65,17 +69,21 @@ class App extends Component {
           <Route
             exact
             path="/normal"
-            render={() => <SearchPage gameMode="normal" />}
+            render={() => (
+              <SearchPage gameMode="normal" user={this.state.user} />
+            )}
           />
           <Route
             exact
             path="/ranked"
-            render={() => <SearchPage gameMode="ranked" />}
+            render={() => (
+              <SearchPage gameMode="ranked" user={this.state.user} />
+            )}
           />
           <Route
             exact
             path="/ARAM"
-            render={() => <SearchPage gameMode="ARAM" />}
+            render={() => <SearchPage gameMode="ARAM" user={this.state.user} />}
           />
         </Switch>
       </div>

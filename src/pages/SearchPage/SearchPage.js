@@ -26,9 +26,9 @@ class SearchPage extends Component {
     console.log(e.target.value);
     this.props.history.push(`/${e.target.value}`);
   };
+
   render() {
-    console.log(this.props.gameMode);
-    return (
+    let checkLogin = this.props.user ? (
       <div className="SearchPage">
         <h2>{this.props.gameMode}</h2>
         <form>
@@ -50,7 +50,10 @@ class SearchPage extends Component {
           <Player gameMode={this.props.gameMode} playerNumber="2" />
         </div>
       </div>
+    ) : (
+      <h2>log in to use the app</h2>
     );
+    return <div>{checkLogin}</div>;
   }
 }
 export default withRouter(SearchPage);
