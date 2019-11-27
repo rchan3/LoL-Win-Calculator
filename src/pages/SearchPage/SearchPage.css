@@ -1,0 +1,20 @@
+.SearchPage {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+
+.PlayerForms{
+  display:flex;
+  justify-content: space-between;
+}
+
+.PlayerForms>div{
+  padding: 2vw;
+}
+
+.SearchPage h2{
+    text-transform: uppercase;
+}
