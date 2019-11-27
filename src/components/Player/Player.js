@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-const axios = require("axios");
 
 class Player extends Component {
   constructor(props) {
