@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+const axios = require("axios");
 
 class Player extends Component {
   constructor(props) {
@@ -27,17 +28,32 @@ class Player extends Component {
   handleSubmit = event => {
     event.preventDefault();
     // const data = new FormData(event.target);
-    console.log(this.state);
+    // console.log(this.state);
     const { summonerName, server } = this.state;
     const { gameMode } = this.props;
 
-    // const url = `https://${server}.whatismymmr.com/api/v1/summoner?name=${summonerName}`;
-    // const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    const url = `/api/mmr/test`;
 
-    // fetch(proxyurl + url)
-    //   .then(response => response.json())
-    //   .then(data => console.log(data.))
-    //   .catch(e => console.log(e));
+    fetch(url, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json"
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: JSON.stringify({
+        summonerName: this.state.summonerName,
+        server: this.state.server,
+        gameMode: this.props.gameMode
+      })
+    })
+      .then(response => response.json())
+      .then(data =>
+        this.setState({
+          mmr: data.avg
+        })
+      )
+      .then(r => console.log(this.state.mmr))
+      .catch(e => console.log(e));
   };
 
   render() {
