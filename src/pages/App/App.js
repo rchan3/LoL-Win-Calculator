@@ -39,7 +39,7 @@ class App extends Component {
         <header>
           <NavBar user={this.state.user} handleLogout={this.handleLogout} />
         </header>
-        <h1>1v1APP</h1>
+        <h1 className="text-center">1v1 APP</h1>
         <Switch>
           <Route
             exact

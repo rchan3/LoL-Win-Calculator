@@ -35,7 +35,11 @@ class SearchPage extends Component {
         <form>
           <label>
             Game Mode
-            <select onChange={this.onChange} defaultValue={this.props.gameMode}>
+            <select
+              onChange={this.onChange}
+              defaultValue={this.props.gameMode}
+              className="form-control"
+            >
               <option disabled value="default">
                 {" "}
                 -- select an option --{" "}

@@ -16,32 +16,52 @@ class Results extends Component {
   //   }
 
   // Function to calculate the Probability
+
   Probability(rating1, rating2) {
-    return 1 / (1 + 1 * Math.pow(10, (1.0 * (rating1 - rating2)) / 400));
+    return (
+      (1 / (1 + 1 * Math.pow(10, (1.0 * (rating1 - rating2)) / 400))) * 100
+    );
   }
   render() {
-    const p1Rate = this.Probability(
+    let showMMR;
+    const p2Rate = this.Probability(
       this.props.results.mmr1,
       this.props.results.mmr2
-    );
-    const p2Rate = this.Probability(
+    ).toFixed(2);
+
+    const p1Rate = this.Probability(
       this.props.results.mmr2,
       this.props.results.mmr1
-    );
+    ).toFixed(2);
 
-    console.log(this.props.results);
-    // let result;
-    // if (this.props.results == false) {
-    //   result = <p></p>;
-    // } else if (this.props.results == true) {
-    //   result = <p>test</p>;
-    // }
-    return (
-      <div>
-        <div className="p1win">{p1Rate}</div>
-        <div className="p2win">{p2Rate}</div>
-      </div>
-    );
+    // if statements for null values
+    if (this.props.results.mmr1 == null && this.props.results.mmr2 == null) {
+      showMMR = "no MMR data for both summoners";
+    } else if (this.props.results.mmr1 == null) {
+      showMMR = "no MMR data for summoner 1";
+    } else if (this.props.results.mmr2 == null) {
+      showMMR = "no MMR data for summoner 2";
+    } else {
+      showMMR = (
+        <div>
+          <div className="p1win">
+            {this.props.results.summoner1Name} win chance:{p1Rate}%
+          </div>
+          <div className="p2win">
+            {this.props.results.summoner2Name} win chance:{p2Rate}%
+          </div>
+        </div>
+      );
+    }
+
+    return <div>{showMMR}</div>;
+
+    // return (
+    //   <div>
+    //     <div className="p1win">{p1Rate}</div>
+    //     <div className="p2win">{p2Rate}</div>
+    //   </div>
+    // );
   }
 }
 export default withRouter(Results);

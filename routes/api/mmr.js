@@ -23,4 +23,38 @@ router.post("/test", function(req, res) {
     });
 });
 
+// router.post("/compare", function(req, res,) {
+//   // The request body should look like this:
+//       // req.body = {
+//       //   gameMode: xxx,
+//       //   player1: {
+//       //     summunorName: xxx,
+//       //     server: xxx
+//       //   },
+//       //   player2: {
+//       //     summunorName: xxx,
+//       //     server: xxx
+//       //   }
+//       // }
+//   let result = {}
+//   // do api call for player 1 using your own function
+//   getMmr(server,player1Handle,mode)
+//   // populate result:
+//   result.player1 = {mmr: xxx}
+//   result.player2 = {mmr: xxx}
+//   // do api call to get details for player 1
+//   // populate results:
+//   result.player1.details = details
+//   result.player2.dtails = details
+//   result = {
+//     player1: {
+//       mmr: 123,
+//       details: {
+//         name: xxx,
+//         location: vvv
+//       }
+//     }
+//   }
+// });
+
 module.exports = router;

@@ -122,7 +122,15 @@ class SearchForm extends Component {
       results = "Summoner 1 does not exist";
     } else if (this.state.error2) {
       results = "Summoner 2 does not exist";
-    } else if (this.state.results && !this.state.error1 && !this.state.error2) {
+    }
+    // else if (this.state.mmr1 == null && this.state.mmr2 == null) {
+    //   results = "no MMR data for both summoners";
+    // } else if (this.state.mmr1 == null) {
+    //   results = "no MMR data for summoner 1";
+    // } else if (this.state.mmr2 == null) {
+    //   results = "no MMR data for summoner 2";
+    // }
+    else if (this.state.results && !this.state.error1 && !this.state.error2) {
       results = (
         <div className="Results">
           <Results results={this.state} />
@@ -152,7 +160,11 @@ class SearchForm extends Component {
               </div>
               <div className="form-group">
                 <div className="col-sm-12">
-                  <select name="server1" defaultValue="na">
+                  <select
+                    name="server1"
+                    defaultValue="na"
+                    className="form-control"
+                  >
                     <option value="na">North America</option>
                     <option value="euw">EU West</option>
                     <option value="eune">EU Nordic & East</option>
@@ -174,7 +186,11 @@ class SearchForm extends Component {
               </div>
               <div className="form-group">
                 <div className="col-sm-12">
-                  <select name="server1" defaultValue="na">
+                  <select
+                    name="server1"
+                    defaultValue="na"
+                    className="form-control"
+                  >
                     <option value="na">North America</option>
                     <option value="euw">EU West</option>
                     <option value="eune">EU Nordic & East</option>
