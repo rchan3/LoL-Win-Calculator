@@ -23,7 +23,7 @@ const NavBar = props => {
     </div>
   );
 
-  return <div className="NavBar">{nav}</div>;
+  return <div className="navbar navbar-default">{nav}</div>;
 };
 
 export default NavBar;

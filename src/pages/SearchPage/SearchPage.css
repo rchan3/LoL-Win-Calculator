@@ -1,20 +1,23 @@
 .SearchPage {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
-  }
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
 
-.PlayerForms{
-  display:flex;
+.PlayerForms {
+  display: flex;
   justify-content: space-between;
 }
 
-.PlayerForms>div{
+.PlayerForms > div {
   padding: 2vw;
 }
 
-.SearchPage h2{
-    text-transform: uppercase;
+.SearchPage h2 {
+  text-transform: uppercase;
+}
+.SearchPage label {
+  text-align: center;
 }

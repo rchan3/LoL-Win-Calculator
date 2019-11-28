@@ -1,0 +1,29 @@
+.flexform {
+  display: flex;
+  padding: 2vh;
+}
+
+.flexform > div {
+  padding: 2vh;
+}
+
+.flexform > div > div {
+  padding: 1vh;
+}
+
+.select-btn > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Results > div {
+  margin: 1vw;
+  text-align: center;
+}

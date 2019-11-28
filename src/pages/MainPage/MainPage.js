@@ -17,16 +17,22 @@ class MainPage extends Component {
   render() {
     let checkLogin = this.props.user ? (
       <div className="SearchPage">
-        <h2>Game Mode</h2>
-        <select onChange={this.onChange} defaultValue={"default"}>
-          <option disabled value="default">
-            {" "}
-            -- select an option --{" "}
-          </option>
-          <option value="ranked">Ranked</option>
-          <option value="normal">Normal</option>
-          <option value="ARAM">ARAM</option>
-        </select>
+        <label>
+          Game Mode
+          <select
+            onChange={this.onChange}
+            defaultValue={"default"}
+            className="form-control"
+          >
+            <option disabled value="default">
+              {" "}
+              -- select an option --{" "}
+            </option>
+            <option value="ranked">Ranked</option>
+            <option value="normal">Normal</option>
+            <option value="ARAM">ARAM</option>
+          </select>
+        </label>
       </div>
     ) : (
       <h2>log in to use the app</h2>
