@@ -70,20 +70,34 @@ class App extends Component {
             exact
             path="/normal"
             render={() => (
-              <SearchPage gameMode="normal" user={this.state.user} />
+              <SearchPage
+                gameMode="normal"
+                user={this.state.user}
+                results="false"
+              />
             )}
           />
           <Route
             exact
             path="/ranked"
             render={() => (
-              <SearchPage gameMode="ranked" user={this.state.user} />
+              <SearchPage
+                gameMode="ranked"
+                user={this.state.user}
+                results="false"
+              />
             )}
           />
           <Route
             exact
             path="/ARAM"
-            render={() => <SearchPage gameMode="ARAM" user={this.state.user} />}
+            render={() => (
+              <SearchPage
+                gameMode="ARAM"
+                user={this.state.user}
+                results="false"
+              />
+            )}
           />
         </Switch>
       </div>
