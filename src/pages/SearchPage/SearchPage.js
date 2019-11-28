@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Player from "../../components/Player/Player";
+import SearchForm from "../../components/SearchForm/SearchForm";
 import { withRouter } from "react-router-dom";
 
 import "./SearchPage.css";
@@ -28,6 +28,7 @@ class SearchPage extends Component {
   };
 
   render() {
+    console.log(this.props);
     let checkLogin = this.props.user ? (
       <div className="SearchPage">
         <h2>{this.props.gameMode}</h2>
@@ -45,9 +46,8 @@ class SearchPage extends Component {
             </select>
           </label>
         </form>
-        <div className="PlayerForms">
-          <Player gameMode={this.props.gameMode} playerNumber="1" />
-          <Player gameMode={this.props.gameMode} playerNumber="2" />
+        <div className="SearchForms">
+          <SearchForm gameMode={this.props.gameMode} />
         </div>
       </div>
     ) : (
