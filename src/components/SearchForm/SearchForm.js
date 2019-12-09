@@ -187,7 +187,7 @@ class SearchForm extends Component {
               <div className="form-group">
                 <div className="col-sm-12">
                   <select
-                    name="server1"
+                    name="server2"
                     defaultValue="na"
                     className="form-control"
                   >
